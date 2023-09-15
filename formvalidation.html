@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+        integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </script>
+
+
+
+    <style>
+        body {
+            background-image: url(./background-image-3671385_1920.jpg);
+        }
+
+        #validform {
+            background-color: rgb(149, 160, 124);
+            border: 1px solid;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            width: fit-content;
+
+
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: underline rgb(18, 156, 71);
+        }
+
+
+        .error {
+            color: red;
+            text-decoration: dotted;
+
+        }
+
+        button {
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Form Validation </h1>
+
+    <div class="container">
+        <form class="row  form-control-lg me-4" id="validform">
+            <div class="col-lg-6">
+                <label for="" class="form-label">First Name:</label>
+                <input type="text" name="firstname" class="form-control" placeholder="First name"
+                    aria-label="First name">
+            </div>
+            <div class="col-lg-6">
+                <label for="" class="form-label">Last Name:</label>
+                <input type="text" name="lastname" class="form-control" placeholder="Last name" aria-label="Last name">
+            </div>
+            <div class="col-12">
+
+                <label for="" class="form-label">User Name:</label>
+                <input type="text" name="username" class="form-control" placeholder="Username" id="username">
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password:</label>
+                <input type="password" name="password" class="form-control" id="Password1" placeholder="Password">
+
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Confirm Password:</label>
+                <input type="password" name="confirm_password" class="form-control" id="Password2"
+                    placeholder="Confirm Password">
+            </div>
+            <div class="col-12">
+
+                <label for="" class="form-label">Email:</label>
+                <input type="email" name="email" class="form-control" id="Email" placeholder="Enter Your Email">
+            </div>
+            <div class="col-6">
+                <label for="inputAddress" class="form-label">Address:</label>
+                <input type="text" name="address" class="form-control" id="Address"
+                    placeholder="Enter Your Temporary Address">
+            </div>
+            <div class="col-6">
+                <label for="inputAddress2" class="form-label">Address 2:</label>
+                <input type="text" name="address2" class="form-control" id="Address2"
+                    placeholder="Enter Your Permanent Address">
+            </div>
+            <div class="col-12">
+
+                <label for="" class="form-label">Phone Number:</label>
+                <input type="text" name="phone" class="form-control" id="Phone" placeholder="Enter Your Phone Number">
+            </div>
+
+
+
+
+            <div class="col-md-3">
+                <label for="" class="form-label">D.O.B:</label>
+                <input type="date" name="dob" class="form-control" id="dop" placeholder="Enter Your Date Of Birth">
+            </div>
+            <div class="col-md-3">
+                <label for="inputState" class="form-label">State:</label>
+                <select id="inputState" name="state" class="form-select">
+                    <option></option>
+                    <option>Tamilnadu</option>
+                    <option>Kerala</option>
+                    <option>Osur</option>
+                    <option>Kashmir</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="inputCity" class="form-label">City:</label>
+                <select id="City" name="city" class="form-select">
+                    <option></option>
+                    <option>Madurai</option>
+                    <option>Theni</option>
+                    <option>Virudhunagar</option>
+                    <option>Ramanadhapuram</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="inputZip" class="form-label">Pincode:</label>
+                <input type="text" name="pincode" class="form-control" id="inputZip" placeholder="Enter Your Pincode">
+            </div>
+
+            <div class="col-12">
+
+
+                <label for="inputCity" class="form-label">Gender:</label>
+                <label class="form-control"> <input type="radio" name="gender" value="male">Male
+
+
+                    <input type="radio" name="gender" value="female">Female
+                </label>
+                <!-- <label><input type="radio" name="gender"  class="form-control" value="male">Male</label>
+                <label><input type="radio" name="gender"   class="form-control"  value="female">Female</label> -->
+
+            </div>
+
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="agree" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </form>
+
+
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+            $("input[type='button']").click(function () {
+                var radioValue = $("input[name='gender']:checked").val();
+                // if(radioValue){
+                //     alert("Your are a - " + radioValue);
+                // }
+            });
+        });
+        $().ready(function () {
+
+
+            jQuery.validator.addMethod("passwordCheck", function (value) {
+                var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{6,}$/;
+                return regex.test(value);
+            });
+            // date Of Birth
+            $.validator.addMethod("minAge", function (value, element, min) {
+                var today = new Date();
+                var birthDate = new Date(value);
+                var age = today.getFullYear() - birthDate.getFullYear();
+
+                if (age > min + 1) { return true; }
+
+                var m = today.getMonth() - birthDate.getMonth();
+
+                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) { age--; }
+
+                return age >= min;
+            }, "You are not old enough!");
+
+
+            // email
+            $.validator.addMethod("customemail",
+                function (value, element) {
+                    return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value);
+                },
+                "Sorry, I've enabled very strict email validation"
+            );
+
+
+            $.validator.addMethod("fname",
+                function (value, element) {
+                    return /^[a-zA-Z]+$/.test(value);
+                },
+                "Sorry, I've enabled very strict email validation"
+            );
+            $.validator.addMethod("pin",
+                function (value, element) {
+                    return /^[0-9]+$/.test(value);
+                },
+                "Sorry, I've enabled very strict email validation"
+            );
+
+        });
+
+
+        //  phone Number
+        $().ready(function () {
+
+            jQuery.validator.addMethod("phone", function (value) {
+                var regex = /^(0|91)?[6-9][0-9]{9}$/;
+                return regex.test(value);
+            });
+
+
+            $("#validform").validate({
+
+                
+                rules: {
+                    firstname: {
+                        required: true,
+                        fname: true
+                    },
+                    lastname: {
+                        required: true,
+                        fname: true
+                    },
+                    username: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 15,
+                                    
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5,
+                        maxlength: 10,
+                        passwordCheck: true
+                    },
+                    confirm_password: {
+                        required: true,
+
+                        equalTo: "#Password1"
+                    },
+                    email: {
+                        required: {
+                            depends: function () {
+                                $(this).val($.trim($(this).val()));
+                                return true;
+                            }
+                        },
+                        customemail: true
+                    },
+                    address: {
+                        required: true,
+                        minlength: 10
+                    },
+                    address2: {
+                        required: true,
+                        minlength: 10
+                    },
+                    phone: {
+                        required: true,
+
+                        phone: true
+
+                    },
+                    state: {
+                        required: true
+
+                    },
+                    city: {
+                        required: true
+                    },
+                    pincode: {
+                        required: true,
+                        minlength: 6,
+                        pin: true
+                    },
+                    gender: {
+                        required: true
+                    },
+                    dob: {
+                        required: true,
+                        minAge: 18
+                    },
+                    agree: "required"
+                },
+                messages: {
+                    firstname: {
+                        required: " Please enter your firstname",
+                        fname: "Enter Correct Name"
+
+                    },
+                    lastname: {
+                        required: " Please enter your laststname",
+                        fname: "Enter Correct Name"
+
+                    },
+
+
+                    username: {
+                        required: " Please enter a username",
+                        minlength:
+                            " Your username must consist of at least 2 characters",
+                       
+                    },
+                    password: {
+                        required: " Please enter a password",
+                        minlength:
+                            " Your password must be consist of at least 5 characters"
+                    },
+                    confirm_password: {
+                        required: " Please enter a password",
+                        minlength:
+                            " Your password must be consist of at least 5 characters",
+                        equalTo: " Please enter the same password as above"
+                    },
+
+
+                    email: {
+                        required: "Enter Mail Id",
+
+
+
+                        customemail: "Please Enter Valid Mail(example@gmail.com) "
+                    },
+                    address: {
+                        required: "Fill Your Address",
+                        minlength: "Minimum 10 Charecter enter!!!"
+                    },
+                    address2: {
+                        required: "Fill Your Current Address",
+                        minlength: "Minimum 10 Charecter enter!!!"
+                    },
+                    phone: {
+                        required: "Enter Phone Number",
+
+                        phone: "please Enter Correct"
+
+                    },
+                    state: {
+                        required: "Choose State"
+
+                    },
+                    city: {
+                        required: "Choose City"
+                    },
+                    pincode: {
+                        required: "Enter Pincode",
+                        minlength: "invalid Pincode",
+                        pin: "Enter Number only"
+
+                    },
+                    gender: {
+                        required: "Choose the Male(or) Female"
+                    },
+                    dob: {
+                        required: "Please enter you date of birth.",
+                        minAge: "You must be at least 18 years old!"
+                    },
+                    agree: "Please accept our policy"
+                }
+            });
+        });
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
